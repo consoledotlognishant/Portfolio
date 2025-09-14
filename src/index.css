@@ -1,0 +1,1088 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+body {
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  
+
+  display: flex;
+  background-color: black;
+  /* background-image: url(g11.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main {
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-content{
+  width: 100%;
+  height: auto;
+
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.my-img2{
+  width: 1000px;
+  filter: drop-shadow(2px 2px 10px );
+}
+.navbar {
+  /* background-color: rgba(0, 0, 0, 0.5);  Semi-transparent black background */
+  /* Apply background blur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* Text color */
+  width: 100%;
+  background-color: #0000007e;
+  height: 110px;
+  position: fixed;
+  /* Keep navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Keep navbar on top */
+  padding: 0 20px;
+  /* Optional padding for spacing */
+
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Drop shadow effect */
+  /* border-bottom: 1px solid rgb(86, 86, 86);*/
+}
+
+.left-navbar-items {
+  margin: 0 100px;
+}
+
+.right-navbar-items {
+  margin: 0 200px;
+  display: flex;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 32px;
+  color: white;
+
+  text-transform: uppercase;
+}
+
+.link-tag {
+  font-size: 15px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  
+
+  transition: 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.right-navbar-items>p{
+  transition: 0.5s ease;
+}
+
+.link-tag:hover {
+  background-color: bisque;
+  color: black;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.link-tag {
+  animation: fadeIn 1.5s ease-out;
+}
+
+.title {
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Initial style when at the top of the page */
+
+.content-block {
+  background-color: #000000;
+  width: 100%;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-out;
+  height: 1000px;
+}
+
+/* Navbar styling */
+.navbar {
+  /* Semi-transparent black background */
+  color: white;
+  /* Default text color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  /* Keep navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  /* Drop shadow effect */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  /* Smooth transition */
+}
+
+/* When the page is scrolled */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Light transparent background */
+  color: black;
+  /* Change text color to black */
+}
+
+/* Navbar links styling */
+.navbar a {
+  color: inherit;
+  /* Inherit color from navbar */
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+/* Optional styling for link tags */
+.link-tag {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.content-block {
+  bottom: 1px;
+
+  height: 950px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgrond-img {
+  width: 100%;
+ 
+
+  position: absolut;
+  animation: fadeIn 1.5s ease-out;
+  z-index: 90;
+  height: 950px;
+  filter: brightness(0.5);
+}
+
+.my-img {
+  width: 40%;
+  position: absolute;
+  animation: fadeIn 1.5s ease-out;
+  z-index: 100;
+left: 600px;
+  bottom: -80px;
+  
+  filter: brightness(0.9);
+}
+
+.title1 {
+  position: relative;
+  z-index: 95;
+  color: rgb(201, 201, 201);
+  animation: fadeIn 1.5s ease-out;
+  bottom: 700px;
+  left: 200px;
+  font-size: 280px;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 700;
+  /* text-shadow: rgb(0, 0, 0) 10px 0 20px; */
+}
+.welcome {
+  position: relative;
+  animation: fadeIn 1.5s ease-out;
+  z-index: 110;
+  color: rgb(201, 201, 201);
+  bottom: 500px;
+  left: 210px;
+  font-size: 40px;
+  font-family: "Jersey 15", serif;
+}
+.title2 {
+  position: absolute;
+  z-index: 120;
+  color: rgb(201, 201, 201);
+  /* animation: fadeIn 1.5s ease-out; */
+  bottom: 10px;
+  left: 1500px;
+  font-size: 70px;
+  font-weight: 600;
+
+  font-style: italic;
+  font-family: "Dancing Script", serif;
+}
+.proffesion {
+  position: absolute;
+  z-index: 120;
+  color: rgb(230, 230, 230);
+  /* animation: fadeIn 1.5s ease-out; */
+  bottom: 0px;
+  text-align: center;
+  left: 800px;
+  font-size: 30px;
+  font-weight: 300;
+
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.black_shadow {
+  position: relative;
+  z-index: 1000;
+  filter: brightness(0.01);
+  width: 100%;
+}
+.black-bottom-shadow {
+  position: absolute;
+  z-index: 100;
+  bottom: 5px;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgb(12, 12, 12) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 350px;
+}
+.black-bottom-block {
+  position: absolute;
+  z-index: 101;
+  bottom: -135px;
+  width: 100%;
+background-color: black;
+  height: 150px;
+}
+.black-Top-shadow {
+  position: absolute;
+  z-index: 92;
+  top: 0px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgb(12, 12, 12) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 150px;
+}
+.block2 {
+  overflow: hidden;
+  height: 1000px;
+  position: relative;
+
+  width: 90%;
+  border: 4px solid white;
+  border-radius: 100px;
+  background-color: rgb(0, 0, 0);
+  margin: 200px 0 200px 0;
+  background-image: url(assets/g66.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.text-1 {
+  font-size: 130px;
+   background-image: url(assets/g10.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+  font-weight: 600;
+  position: relative;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  bottom: -100px;
+  left: 200px;
+  border: 4px solid rgb(0, 0, 0);
+
+filter: invert(1);
+border-radius: 100px 0 0 100px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 0;
+}
+.text-2 {
+     border: 4px solid rgb(255, 255, 255);
+ background-image: url(assets/g12.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+
+border-radius: 100px 0 0 100px;
+  font-size: 130px;
+  font-weight: 500;
+  font-family: "Dancing Script", serif;
+  bottom: -130px;
+  left: 500px;
+
+color: white;
+  margin: 0;
+
+  position: relative;
+  padding: 0;
+}
+.text-3 {
+    
+filter: invert(1);
+  font-size: 120px;
+  
+  font-weight: 600;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  bottom: -130px;
+  left: 900px;
+  margin: 30px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0;
+}
+.text-4 {
+  font-size: 120px;
+  /* border-radius: 100px 0 0 100px; */
+
+  bottom: -90px;
+  left: 100px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+/* border: 4px solid rgb(0, 0, 0); */
+  margin: 0;
+ filter: invert(1);
+
+  position: relative;
+  padding: 0;
+}
+.text-6 {
+  font-size: 100px;
+  margin: 100px 0 100px 0;
+
+  text-transform: uppercase;
+   color: rgb(255, 255, 255);
+   background-image: url(assets/g4.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+  font-weight: 600;
+  margin: 200px;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-7 {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-size: 600;
+  
+
+
+  text-transform: uppercase;
+
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-8 {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-size: 600;
+  margin: 35px 0;
+
+
+  text-transform: uppercase;
+
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-5 {
+  font-size: 150px;
+  font-weight: 500;
+  font-family: "Dancing Script", serif;
+  bottom: -60px;
+  left: 400px;
+  margin: 30px;
+
+filter: invert(1);
+  position: relative;
+  padding: 0;
+}
+
+.text-6 > b {
+  color: rgb(255, 255, 255);
+
+  background-color: rgb(77, 74, 243);
+}
+.text-5 > b {
+  color: rgb(255, 255, 255);
+filter: invert(1);
+  font-weight: 700;
+}
+.text-5 > b {
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+}
+.block2 > p {
+  color: rgb(15, 15, 15);
+}
+
+.about-block {
+  height: 1000px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: rgb(224, 224, 224);
+  align-items: center;
+  justify-content: center;
+}
+.leftblock {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightblock {
+  width: 50%;
+  flex-direction: column;
+  height: 100%;
+ 
+  display: flex;
+  align-items: baseline;
+
+  justify-content: end;
+}
+.rightblock > h1 {
+  font-size: 26px;
+  transform: translateX(190px);
+  position: relative;
+  color: rgb(24, 24, 24);
+  bottom: 100px;
+}
+.rightblock > p {
+  font-size: 20px;
+  bottom: 100px;
+ background-color: rgb(224, 224, 224);
+  padding: 20px;
+  position: relative;
+  color: rgb(99, 99, 99);
+  max-width: 500px;
+  text-align: center;
+  /* border: 4px solid black;
+  border-radius: 50px; */
+}
+.technology {
+  width: 100%;
+  height: 2300px;
+  display: flex;
+  align-items: center;
+background-color: rgb(0, 0, 0);
+  flex-direction: column;
+}
+.language-block {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  margin: 0 0 50px 0;
+  align-items: center;
+  justify-content: center;
+}
+.programing-block {
+  width: 40%;
+  background-color: rgb(56, 56, 56);
+  height: 100%;
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.programing-block2 {
+  width: 40%;
+  background-color: rgb(216, 216, 216);
+  height: 100%;
+  margin: 50px;
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.tools {
+  height: 400px;
+  width: 85%;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 200px;
+}
+.languages {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.languages1 {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.round-circle {
+  height: 15px;
+  width: 15px;
+  border-radius: 100px;
+  background-color: rgb(255, 0, 0);
+  border: 2px solid white;
+  margin: 20px;
+}
+.round-circle1 {
+  height: 15px;
+  width: 15px;
+  border-radius: 100px;
+  background-color: rgb(200, 255, 0);
+  border: 2px solid white;
+  margin: 20px;
+}
+.round-circle2 {
+  height: 15px;
+  width: 15px;
+  border-radius: 100px;
+  background-color: rgb(51, 47, 255);
+  border: 2px solid white;
+  margin: 20px;
+}
+.icons {
+  width: 100px;
+  margin: 20px 20px 20px 0;
+  filter: drop-shadow(10px 20px 15px black) ;
+}
+.about-language {
+  font-size: 23px;
+  font-family: "Dancing Script", serif;
+  color: white;
+  max-width: 550px;
+}
+.about-language2 {
+  font-size: 23px;
+  font-family: "Dancing Script", serif;
+  color: rgb(0, 0, 0);
+  max-width: 550px;
+}
+#iconsmall {
+  width: 150px;
+  margin: 0;
+}
+.project-area {
+  width: 100%;
+  overflow: hidden;
+  height: 1000px;
+border: 4px solid white;
+  background-color: black;
+
+  margin: 400px 0 0 0;
+  background-image: url(assets/173874.jpg);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  width: 90%;
+  height: 1000px;
+  border-radius: 50px;
+  margin: 100px;
+  
+}
+.project-area>p{
+    transition: 0.3s ease;
+}
+
+.project-area:hover>p{
+  filter: drop-shadow(20px 20px 5px black);
+ 
+}
+.project-area2>p{
+    transition: 0.3s ease;
+}
+
+.project-area2:hover>p{
+  filter: drop-shadow(20px 20px 5px black);
+ 
+}
+.project-area3>p{
+    transition: 0.3s ease;
+}
+
+.project-area3:hover>p{
+  filter: drop-shadow(20px 20px 5px black);
+ 
+}
+.project-area4>p{
+    transition: 0.3s ease;
+}
+
+.project-area4:hover>p{
+  filter: drop-shadow(20px 20px 5px black);
+ 
+}
+.project-area2 {
+  width: 100%;
+  overflow: hidden;
+  height: 1000px;
+border: 4px solid white;
+  background-color: black;
+
+  margin: 400px 0 0 0;
+  background-image: url(assets/5.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 -300px;
+  background-size: 150%;
+  width: 90%;
+  height: 1000px;
+  border-radius: 50px;
+  margin: 100px;
+}
+.project-area3 {
+  width: 100%;
+  overflow: hidden;
+  height: 1000px;
+border: 4px solid white;
+  background-color: black;
+
+  margin: 400px 0 0 0;
+  background-image: url(assets/3.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 -1500px;
+  background-size: 100%;
+  width: 90%;
+  height: 1000px;
+  border-radius: 50px;
+  margin: 100px;
+  transition: box-shadow 0.3s ease-out; /* Transition for the shadow */
+  /* Initial shadow */
+}
+.project-area:hover {
+  box-shadow: 20px 20px 50px rgb(64, 64, 64);
+}
+.project-area2:hover {
+  box-shadow: 20px 20px 50px rgb(64, 64, 64);
+}
+.project-area3:hover {
+  box-shadow: 20px 20px 50px rgb(64, 64, 64);
+}
+.project-area > img {
+  width: 110%;
+  filter: brightness(0.7);
+  position: absolute;
+
+  z-index: 1;
+}
+.text-11 {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 700;
+  left: 500px;
+  transform: translateY(200px);
+  text-transform: uppercase;
+  z-index: 1000;
+  color: rgb(230, 230, 230);
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-111 {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 700;
+  left: 900px;
+  transform: translateY(200px);
+  text-transform: uppercase;
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-22 {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 700;
+  left: 500px;
+  transform: translateY(350px);
+  text-transform: uppercase;
+  z-index: 1000;
+  color: rgb(230, 230, 230);
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+.text-222 {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 700;
+  left: 500px;
+  transform: translateY(350px);
+  text-transform: uppercase;
+  z-index: 1000;
+  color: rgb(230, 230, 230);
+
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+
+.text-32 {
+  position: absolute;
+  font-size: 120px;
+  font-weight: 700;
+  left: 1000px;
+  transform: translateY(530px);
+
+  z-index: 1000;
+  color: rgb(230, 230, 230);
+  font-family: "Dancing Script", serif;
+}
+.text-323 {
+  position: absolute;
+  font-size: 120px;
+  font-weight: 700;
+  left: 500px;
+  transform: translateY(530px);
+
+  z-index: 1000;
+  color: rgb(230, 230, 230);
+  font-family: "Dancing Script", serif;
+}
+.projects-block {
+  height: 6000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  background-color: #000000;
+  overflow: hidden;
+}
+.heading {
+  width: 90%;
+  height: 400px;
+  margin: 200px 0 0 0;
+  filter: invert(1);
+}
+.text-67 {
+  font-size: 150px;
+  margin: 0;
+  padding: 0;
+  color: rgb(31, 31, 31);
+  font-family: "Dancing Script", serif;
+  transform: translateX(400px);
+}
+.text-68 {
+  font-size: 150px;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 700;
+  color: rgb(31, 31, 31);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  transform: translateX(600px);
+  position: relative;
+  bottom: 50px;
+}
+.project-title {
+  width: 95%;
+  height: 400px;
+transition: 0.8s;
+  margin: 200px 0 0 0;
+color: wheat;
+ background-image: url(assets/g11.jpg);
+ border: 4px solid black;
+ background-repeat: no-repeat;
+ background-size: cover;
+  border-radius: 100px 100px 0 0;
+}
+.project-title>p{
+  color: white;
+}
+.project-title:hover{
+  background-color: #000000;
+  filter: invert(1);
+}
+.text-70 {
+  font-size: 150px;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 700;
+  color: rgb(31, 31, 31);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  transform: translateX(400px);
+  position: relative;
+  top: 50px;
+}
+.text-71 {
+  font-size: 150px;
+  font-family: "Dancing Script", serif;
+  font-weight: 700;
+  color: rgb(31, 31, 31);
+  margin: 0;
+  padding: 0;
+
+  transform: translateX(600px);
+  position: relative;
+}
+.project-block {
+  height: 970px;
+  width: 95%;
+ border: 4px solid white;
+  border-radius: 0 0 100px 100px;
+  margin: 50px 0 0 0;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slider-images img {
+  width: 100%;
+  flex-shrink: 0;
+}
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+#prevBtn {
+  background-color: rgba(0, 0, 0, 0.185);
+  color: white;
+  border: none;
+  height: 200px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 0px 100px 100px 0;
+}
+#nextBtn {
+  background-color: rgba(0, 0, 0, 0.356);
+  color: white;
+  border: none;
+  height: 200px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 100px 0px 0px 100px;
+}
+#nextBtn:hover {
+  background-color: rgba(54, 54, 54, 0.637);
+}
+#prevBtn:hover {
+  background-color: rgba(54, 54, 54, 0.637);
+}
+#prevBtn > img {
+  width: 50px;
+  filter: invert(1);
+}
+#nextBtn > img {
+  width: 50px;
+  filter: invert(1);
+}
+.programing-language-block{
+
+    width: 100%;
+    height: 700px;
+    gap: 40px;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.programing-language-block:hover>.text-7{
+  background-image: url(assets/g4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.programing-language-block{
+
+    width: 100%;
+    height: 700px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.programing-block1{
+    width: 430px;
+    height: 80%;
+    background-color: black;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header{
+    width: 95%;
+    height: 60px;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+.about-language{
+      width: 95%;
+    height: 200px;
+    flex-direction: column;
+    display: flex;
+    
+
+    
+}
+.knowmore{
+  height: 30px;
+  width: 80px;
+  border-radius: 100px;
+  border: none;
+  background-color: yellow;
+  color: black;
+  font-weight: 600;
+cursor: pointer;
+
+  
+}
+.about-language>h1{
+  font-size: 30px;
+  margin: 0 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;  
+
+}
+.about-language>p{
+  font-size: 14px;
+  color: rgb(174, 174, 174);
+    margin: 20px 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;  
+
+}
+.programing-img-block1{
+    width: 95%;
+    height: 270px;
+    background-image: url(assets/g4.jpg);
+   background-size: 135%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-repeat: no-repeat;
+    border-radius: 0 0 50px 50px;
+}
+.programing-img-block2{
+    width: 95%;
+    height: 270px;
+    background-image: url(assets/g1.jpg);
+   background-size: 155%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-repeat: no-repeat;
+    border-radius: 0 0 50px 50px;
+}
+.programing-img-block3{
+    width: 95%;
+    height: 270px;
+    background-image: url(assets/g3.jpg);
+   background-size: 135%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-repeat: no-repeat;
+    border-radius: 0 0 50px 50px;
+}
+.programing-img-block4{
+    width: 95%;
+    height: 270px;
+    background-image: url(assets/g7.jpg);
+   background-size: 135%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-repeat: no-repeat;
+    border-radius: 0 0 50px 50px;
+}
+.header>img{
+  width: 80px;
+  margin: -40px 0;
+  filter: invert(1);
+}
+.left-navbar-items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.logo{
+    width: 80px;
+
+  filter: invert(1);
+}
+.programing-block1{
+  width: 380px;
+ transition: 0.5s;
+  border: 3px solid white;
+}
+.programing-block1:hover{
+  transform: translateY(-50px);
+/* transform: scale(1.1); */
+}
+.block2{
+ margin: 300px 100px;
+}
