@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
           <Link to="/projects">
             <p id="text-projects" className="link-tag">
-              cd p My Projects
+              My Projects
             </p>
           </Link>
           <Link to="/skill">
