@@ -1,60 +1,91 @@
-// import React, { useEffect } from "react";
-// import gsap from "gsap";
+import React, { useEffect, useState } from "react";
 import Navbar from "./PageComponet/Navbar";
-
-
+import Footer from "./Footer";
 
 const App = () => {
-  //   useEffect(() => {
-  // Parallax effect script
-  // const parallax_el = document.querySelectorAll(".parallax");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentTravelImageIndex, setCurrentTravelImageIndex] = useState(0);
 
-  // let xvalue = 0,
-  //   yvalue = 0;
+  // Define image arrays
+  const netflixImages = [
+    "Screenshot (98).png",
+    "Screenshot (99).png",
+    "Screenshot (100).png",
+    "Screenshot (101).png",
+    "Screenshot (103).png",
+    "Screenshot (104).png",
+    "Screenshot (105).png",
+    "Screenshot (106).png",
+    "Screenshot (107).png",
+    "Screenshot (108).png"
+  ];
 
-  // const handleMouseMove = (e) => {
-  //   xvalue = e.clientX - window.innerWidth / 2;
-  //   yvalue = e.clientY - window.innerHeight / 2;
+  const travelImages = [
+    "Screenshot (91).png",
+    "Screenshot (96).png",
+    "Screenshot (92).png",
+    "Screenshot (93).png",
+    "Screenshot (95).png"
+  ];
 
-  //   parallax_el.forEach((el) => {
-  //     let speedx = el.dataset.speedx;
-  //     let speedy = el.dataset.speedy;
-  //     let speedz = el.dataset.speedz;
+  // Auto-scroll functionality for Netflix project images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % netflixImages.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval);
+  }, [netflixImages.length]);
 
-  //     let isInLeft =
-  //       parseFloat(getComputedStyle(el).left) < window.innerWidth / 2
-  //         ? 1
-  //         : -1;
-  //     let zvalue = 0.1;
+  // Auto-scroll functionality for TravelKaro project images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTravelImageIndex((prevIndex) => (prevIndex + 1) % travelImages.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval);
+  }, [travelImages.length]);
 
-  //     el.style.transform = `translateX(calc(0% + ${
-  //       -xvalue * speedx
-  //     }px)) translateY(calc(0% + ${
-  //       -yvalue * speedy
-  //     }px)) perspective(2300px) translateZ(${zvalue * speedz}px)`;
-  //   });
-  // };
+  // Parallax effect
+  useEffect(() => {
+    const parallax_el = document.querySelectorAll(".parallax");
+    let xvalue = 0, yvalue = 0;
 
-  // window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseMove = (e) => {
+      xvalue = e.clientX - window.innerWidth / 2;
+      yvalue = e.clientY - window.innerHeight / 2;
 
-  // // GSAP animation
-  // let timeline = gsap.timeline();
+      parallax_el.forEach((el) => {
+        let speedx = el.dataset.speedx;
+        let speedy = el.dataset.speedy;
+        let speedz = el.dataset.speedz;
+        let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
+        let zvalue = 0.1;
 
-  // Array.from(parallax_el)
-  //   .filter((el) => !el.classList.contains("text"))
-  //   .forEach((el) => {
-  //     timeline.from(
-  //       el,
-  //       {
-  //         top: `${
-  //           el.offsetHeight / 2 + parseFloat(el.dataset.distance || 0)
-  //         }px`,
-  //         duration: 3.5,
-  //         ease: "power3.out",
-  //       },
-  //       "1"
-  //     );
-  //   });
+        el.style.transform = `translateX(calc(0% + ${-xvalue * speedx}px)) translateY(calc(0% + ${-yvalue * speedy}px)) perspective(2300px) translateZ(${zvalue * speedz}px)`;
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  // Slider functions
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % netflixImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + netflixImages.length) % netflixImages.length);
+  };
+
+  const nextTravelImage = () => {
+    setCurrentTravelImageIndex((prevIndex) => (prevIndex + 1) % travelImages.length);
+  };
+
+  const prevTravelImage = () => {
+    setCurrentTravelImageIndex((prevIndex) => (prevIndex - 1 + travelImages.length) % travelImages.length);
+  };
 
   return (
     <div id="main">
@@ -70,15 +101,15 @@ const App = () => {
           data-distance="-200"
           alt="Background"
         />
-        <img
-          className=" my-img  parallax"
+        {/* <img
+          className=" my-img parallax"
           src="erasebg-transformed.png"
           alt="MyImage"
           data-speedx="0.09"
           data-speedy="0.09"
           data-speedz="0.0"
           data-distance="2222"
-        />
+        /> */}
         <div
           className="black-Top-shadow"
           data-speedx="0.05"
@@ -162,12 +193,12 @@ const App = () => {
         <div className="rightblock">
           <h1 className="titlle4">About Me</h1>
           <p className="about-content">
-            I’m <b>Nishant</b>, a B.Tech student at C.V. Raman Global
+            I'm <b>Nishant</b>, a B.Tech student at C.V. Raman Global
             University, specializing in Computer Science with a focus on AI and
-            ML. I’m passionate about building inspiring websites that are both
+            ML. I'm passionate about building inspiring websites that are both
             functional and visually appealing. I love solving bugs and creating
             custom websites for clients. Whether it's coding from scratch or
-            optimizing an existing site, I’m always excited to bring ideas to
+            optimizing an existing site, I'm always excited to bring ideas to
             life. Check out my portfolio, and feel free to reach out if you need
             a website built or help with any coding challenges!
           </p>
@@ -180,7 +211,6 @@ const App = () => {
         </h1>
         <h1 className="text-7">Frontend Technologies</h1>
         <div className="programing-language-block">
-          {/* Repeat this block for each technology */}
           <div className="programing-block1">
             <div className="header">
               <img src="n_logomark_drb_4x-removebg-preview.png" alt="" />
@@ -242,13 +272,10 @@ const App = () => {
               <img className="icons" src="pngegg (7).png" alt="" />
             </div>
           </div>
-
-          {/* Repeat for CSS, JavaScript, React.js, etc. */}
         </div>
 
         <h1 className="text-7">Backend Technologies</h1>
         <div className="programing-language-block">
-          {/* Repeat this block for each technology */}
           <div className="programing-block1">
             <div className="header">
               <img src="n_logomark_drb_4x-removebg-preview.png" alt="" />
@@ -281,7 +308,6 @@ const App = () => {
               <img className="icons" src="pngegg (14).png" alt="" />
             </div>
           </div>
-
           <div className="programing-block1">
             <div className="header">
               <img src="n_logomark_drb_4x-removebg-preview.png" alt="" />
@@ -298,7 +324,6 @@ const App = () => {
               <img className="icons" src="pngegg (5).png" alt="" />
             </div>
           </div>
-
           <div className="programing-block1">
             <div className="header">
               <img src="n_logomark_drb_4x-removebg-preview.png" alt="" />
@@ -315,8 +340,6 @@ const App = () => {
               <img className="icons" src="pngegg (8).png" alt="" />
             </div>
           </div>
-
-          {/* Repeat for Express.js, MySQL, MongoDB, etc. */}
         </div>
       </div>
 
@@ -355,26 +378,17 @@ const App = () => {
         </div>
         <div className="project-block">
           <div className="slider">
-            <div className="slider-images" id="sliderImages">
-              <img src="Screenshot (98).png" alt="Photo1" />
-              <img src="Screenshot (99).png" alt="Photo4" />
-              <img src="Screenshot (100).png" alt="Photo2" />
-              <img src="Screenshot (101).png" alt="Photo3" />
-              <img src="Screenshot (103).png" alt="Photo5" />
-              <img src="Screenshot (104).png" alt="Photo6" />
-              <img src="Screenshot (105).png" alt="Photo7" />
-              <img src="Screenshot (106).png" alt="Photo8" />
-              <img src="Screenshot (107).png" alt="Photo9" />
-              <img src="Screenshot (108).png" alt="Photo10" />
+            <div className="slider-images">
+              <img src={netflixImages[currentImageIndex]} alt={`Netflix Screenshot ${currentImageIndex + 1}`} />
             </div>
             <div className="slider-buttons">
-              <button id="prevBtn">
+              <button id="nextBtn" onClick={prevImage}>
                 <img
                   src="https://img.icons8.com/?size=100&id=9438&format=png&color=000000"
                   alt="Previous"
                 />
               </button>
-              <button className="nextbtn" id="nextBtn">
+              <button id="nextBtn" className="nextbtn" onClick={nextImage}>
                 <img
                   src="https://img.icons8.com/?size=100&id=9432&format=png&color=000000"
                   alt="Next"
@@ -389,21 +403,17 @@ const App = () => {
         </div>
         <div className="project-block">
           <div className="slider">
-            <div className="slider-images" id="sliderImages">
-              <img src="Screenshot (91).png" alt="Photo1" />
-              <img src="Screenshot (96).png" alt="Photo4" />
-              <img src="Screenshot (92).png" alt="Photo2" />
-              <img src="Screenshot (93).png" alt="Photo3" />
-              <img src="Screenshot (95).png" alt="Photo5" />
+            <div className="slider-images">
+              <img src={travelImages[currentTravelImageIndex]} alt={`TravelKaro Screenshot ${currentTravelImageIndex + 1}`} />
             </div>
             <div className="slider-buttons">
-              <button id="prevBtn">
+              <button id="nextBtn" onClick={prevTravelImage}>
                 <img
                   src="https://img.icons8.com/?size=100&id=9438&format=png&color=000000"
                   alt="Previous"
                 />
               </button>
-              <button className="nextbtn" id="nextBtn">
+              <button className="nextbtn" id="nextBtn" onClick={nextTravelImage}>
                 <img
                   src="https://img.icons8.com/?size=100&id=9432&format=png&color=000000"
                   alt="Next"
@@ -413,6 +423,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
